@@ -1,4 +1,8 @@
 class Pizza
+	def initialize(toppings)
+		@toppings = []
+		
+	end
 end
 
 class Topping
