@@ -31,6 +31,14 @@ describe Pizza do
 
       end
     end
+  describe '.add_topping' do
+    it 'adds a new topping to a pizza' do
+      pizza = Pizza.new
+      pizza.add_topping(Topping.new('sausage', vegetarian: false))
+
+      expect(pizza.toppings.count).to eq(2)
+    end
+  end
 end
 
 describe Topping do
