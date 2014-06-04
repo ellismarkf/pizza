@@ -48,7 +48,18 @@ describe Pizza do
     it 'increases delivery_time attribute by 30 minutes' do
       pizza = Pizza.new
 
-      expect(pizza.deliver!).to eq(Time.now + 30*60)
+      expect(pizza.deliver!).to be_between(Time.now + 30*60-60, Time.now + 30*60+60)
+    end
+  end
+  describe '.late?' do
+    it 'retuns true if time is later than delivery_time' do
+      pizza = Pizza.new
+      
+      pizza.deliver!
+
+      time = pizza.delivery_time + 300
+
+      expect(pizza.late?).to eq(true)
     end
   end
 end
