@@ -18,6 +18,11 @@ describe Pizza do
 			expect(pizza.toppings.size).to eq(1)
 			expect(pizza.toppings.first.name).to eq('cheese')
 		end
+    it 'sets default delivery time equal to nil' do
+      pizza = Pizza.new
+
+      expect(pizza.delivery_time).to eq(nil)
+    end
 	end
   describe '.vegetarian?' do
       it 'checks if all toppings on a pizza are vegetarian' do
@@ -39,6 +44,7 @@ describe Pizza do
       expect(pizza.toppings.count).to eq(2)
     end
   end
+
 end
 
 describe Topping do

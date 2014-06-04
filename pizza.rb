@@ -1,7 +1,8 @@
 class Pizza
-	attr_accessor :toppings
-	def initialize(toppings = [Topping.new('cheese', vegetarian: true)])
+	attr_accessor :toppings, :delivery_time
+	def initialize(toppings = [Topping.new('cheese', vegetarian: true)], delivery_time = nil)
 		@toppings = toppings
+		@delivery_time = delivery_time
 	end
 
 	def vegetarian?
