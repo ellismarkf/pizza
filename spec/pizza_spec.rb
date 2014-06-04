@@ -44,7 +44,13 @@ describe Pizza do
       expect(pizza.toppings.count).to eq(2)
     end
   end
+  describe '.deliver!' do
+    it 'increases delivery_time attribute by 30 minutes' do
+      pizza = Pizza.new
 
+      expect(pizza.deliver!).to eq(Time.now + 30*60)
+    end
+  end
 end
 
 describe Topping do
