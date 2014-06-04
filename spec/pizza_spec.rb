@@ -18,27 +18,19 @@ describe Pizza do
 			expect(pizza.toppings.size).to eq(1)
 			expect(pizza.toppings.first.name).to eq('cheese')
 		end
-		describe '.vegetarian?' do
-			it 'checks if all toppings on a pizza are vegetarian' do
-				toppings = [
-					Topping.new('bell peppers', vegetarian: true),
-					Topping.new('mushrooms', vegetarian: true),
-					Topping.new('onions', vegetarian: true)
-				]
-				pizza = Pizza.new(toppings)
-				expect(pizza.vegetarian?).to eq(true)
-
-				# pizza.toppings.each { |t| expect(t.vegetarian).to eq(true) }
-				# expect(pizza.toppings.first.vegetarian).to eq(true)
-				# expect(pizza.toppings[1].vegetarian).to eq(true)
-				# expect(pizza.toppings[2].vegetarian).to eq(true)
-				# expect(pizza.toppings[3].vegetarian).to eq(true)
-
-
-
-			end
-		end
 	end
+  describe '.vegetarian?' do
+      it 'checks if all toppings on a pizza are vegetarian' do
+        toppings = [
+          Topping.new('bell peppers', vegetarian: true),
+          Topping.new('mushrooms', vegetarian: true),
+          Topping.new('onions', vegetarian: true)
+        ]
+        pizza = Pizza.new(toppings)
+        expect(pizza.vegetarian?).to eq(true)
+
+      end
+    end
 end
 
 describe Topping do
